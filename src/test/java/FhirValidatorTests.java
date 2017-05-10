@@ -6,10 +6,6 @@ import ca.uhn.fhir.context.FhirContext;
 import ca.uhn.fhir.validation.FhirValidator;
 import ca.uhn.fhir.validation.ValidationResult;
 
-import org.hl7.fhir.dstu3.hapi.validation.DefaultProfileValidationSupport;
-import org.hl7.fhir.dstu3.hapi.validation.FhirInstanceValidator;
-import org.hl7.fhir.dstu3.hapi.validation.IValidationSupport;
-import org.hl7.fhir.dstu3.hapi.validation.ValidationSupportChain;
 import org.hl7.fhir.dstu3.model.Bundle;
 import org.hl7.fhir.dstu3.model.DeviceComponent;
 import org.hl7.fhir.dstu3.model.DeviceMetric;
@@ -22,7 +18,7 @@ public class FhirValidatorTests {
 
     @BeforeClass
     public static void setUp() {
-        validator = initFhirValidator(FhirContext.forDstu3());
+        validator = FhirDeviceProfileValidator.initFhirValidator(FhirContext.forDstu3());
     }
 
     @Test
@@ -61,17 +57,5 @@ public class FhirValidatorTests {
             assertTrue(vr.isSuccessful());
             vr.getMessages().forEach(m -> System.out.println(m));
         });
-    }
-
-    private static FhirValidator initFhirValidator(FhirContext fhirContext) {
-        FhirValidator validator = fhirContext.newValidator();
-
-        FhirInstanceValidator instanceValidator = new FhirInstanceValidator();
-        IValidationSupport valSupport = new DeviceValidationSupport();
-        ValidationSupportChain support = new ValidationSupportChain(new DefaultProfileValidationSupport(), valSupport);
-        instanceValidator.setValidationSupport(support);
-
-        validator.registerValidatorModule(instanceValidator);
-        return validator;
     }
 }

@@ -1,0 +1,25 @@
+<DeviceComponent xmlns="http://hl7.org/fhir">
+  <meta>
+    <profile value="http://example.org/fhir/StructureDefinition/VmdDeviceComponent" />
+  </meta>
+  <type>
+    <coding>
+      <system value="urn:iso:std:iso:11073:10101" />
+      <code value="69798" />
+      <display value="MDC_DEV_ECG_VMD" />
+    </coding>
+    <text value="ECG" />
+  </type>
+  <identifier>
+    <use value="temp" />
+    <system value="urn:ietf:rfc:3986" />
+    <value value="urn:uuid:ba1d59b7-c8aa-40a7-bd1f-175cfa5c0f8b" />
+  </identifier>
+  <lastSystemChange value="2017-02-27T15:13:52+01:00" />
+  <source>
+    <reference value="urn:uuid:7c20381b-6acc-401e-914e-0c1a21a58ad7" />
+  </source>
+  <parent>
+    <reference value="urn:uuid:23016539-8e68-4f25-8281-a2802ded806c" />
+  </parent>
+</DeviceComponent>

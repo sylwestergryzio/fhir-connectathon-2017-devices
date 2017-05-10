@@ -1,0 +1,455 @@
+<Bundle xmlns="http://hl7.org/fhir">
+  <meta>
+    <profile value="http://example.org/fhir/StructureDefinition/PhysioMonitorDeviceBundle" />
+  </meta>
+  <type value="transaction" />
+  <entry id="Patient">
+    <fullUrl value="urn:uuid:5f9ce49b-d643-4a71-929e-9d9a1b70aa66" />
+    <resource>
+      <Patient xmlns="http://hl7.org/fhir">
+        <identifier>
+          <use value="usual" />
+          <type>
+            <coding>
+              <system value="http://hl7.org/fhir/v2/0203" />
+              <code value="MR" />
+            </coding>
+          </type>
+          <value value="0815" />
+        </identifier>
+        <active value="true" />
+        <name>
+          <use value="usual" />
+          <family value="Doe" />
+          <given value="John" />
+        </name>
+        <gender value="male" />
+        <birthDate value="1967-01-01" />
+      </Patient>
+    </resource>
+    <request>
+      <method value="POST" />
+      <url value="Patient" />
+    </request>
+  </entry>
+  <entry id="Device">
+    <fullUrl value="urn:uuid:7c20381b-6acc-401e-914e-0c1a21a58ad7" />
+    <resource>
+      <Device xmlns="http://hl7.org/fhir">
+        <identifier>
+          <use value="official" />
+          <system value="urn:oid:1.2.840.10004.1.1.1.0.0.1.0.0.1.2680" />
+          <value value="00-09-FB-FF-FF-01-6A-49" />
+        </identifier>
+        <type>
+          <coding>
+            <system value="urn:iso:std:iso:11073:10101" />
+            <code value="69965" />
+            <display value="MDC_DEV_MON_PHYSIO_MULTI_PARAM_MDS" />
+          </coding>
+          <text value="Patient Monitor" />
+        </type>
+        <manufacturer value="Philips" />
+        <model value="FMS" />
+        <patient>
+          <reference value="urn:uuid:5f9ce49b-d643-4a71-929e-9d9a1b70aa66" />
+        </patient>
+      </Device>
+    </resource>
+    <request>
+      <method value="POST" />
+      <url value="Device" />
+    </request>
+  </entry>
+  <entry id="DeviceComponent1">
+    <fullUrl value="urn:uuid:23016539-8e68-4f25-8281-a2802ded806c" />
+    <resource>
+      <DeviceComponent xmlns="http://hl7.org/fhir">
+        <type>
+          <coding>
+            <system value="urn:iso:std:iso:11073:10101" />
+            <code value="69965" />
+            <display value="MDC_DEV_MON_PHYSIO_MULTI_PARAM_MDS" />
+          </coding>
+          <text value="Patient Monitor" />
+        </type>
+        <identifier>
+          <use value="temp" />
+          <system value="urn:ietf:rfc:3986" />
+          <value value="urn:uuid:23016539-8e68-4f25-8281-a2802ded806c" />
+        </identifier>
+        <lastSystemChange value="2017-02-27T15:13:52+01:00" />
+        <source>
+          <reference value="urn:uuid:7c20381b-6acc-401e-914e-0c1a21a58ad7" />
+        </source>
+        <languageCode>
+          <coding>
+            <system value="urn:ietf:bcp:47" />
+            <code value="en" />
+          </coding>
+        </languageCode>
+      </DeviceComponent>
+    </resource>
+    <request>
+      <method value="POST" />
+      <url value="DeviceComponent" />
+    </request>
+  </entry>
+  <entry>
+    <fullUrl value="urn:uuid:ba1d59b7-c8aa-40a7-bd1f-175cfa5c0f8b" />
+    <resource>
+      <DeviceComponent xmlns="http://hl7.org/fhir">
+        <type>
+          <coding>
+            <system value="urn:iso:std:iso:11073:10101" />
+            <code value="69798" />
+            <display value="MDC_DEV_ECG_VMD" />
+          </coding>
+          <text value="ECG" />
+        </type>
+        <identifier>
+          <use value="temp" />
+          <system value="urn:ietf:rfc:3986" />
+          <value value="urn:uuid:ba1d59b7-c8aa-40a7-bd1f-175cfa5c0f8b" />
+        </identifier>
+        <lastSystemChange value="2017-02-27T15:13:52+01:00" />
+        <source>
+          <reference value="urn:uuid:7c20381b-6acc-401e-914e-0c1a21a58ad7" />
+        </source>
+        <parent>
+          <reference value="urn:uuid:23016539-8e68-4f25-8281-a2802ded806c" />
+        </parent>
+      </DeviceComponent>
+    </resource>
+    <request>
+      <method value="POST" />
+      <url value="DeviceComponent" />
+    </request>
+  </entry>
+  <entry>
+    <fullUrl value="urn:uuid:1dda5d5a-f4c8-48e5-85c5-b21970a17bc0" />
+    <resource>
+      <DeviceComponent xmlns="http://hl7.org/fhir">
+        <type>
+          <coding>
+            <system value="urn:iso:std:iso:11073:10101" />
+            <code value="69799" />
+            <display value="MDC_DEV_ECG_CHAN" />
+          </coding>
+          <text value="ECG" />
+        </type>
+        <identifier>
+          <use value="temp" />
+          <system value="urn:ietf:rfc:3986" />
+          <value value="urn:uuid:1dda5d5a-f4c8-48e5-85c5-b21970a17bc0" />
+        </identifier>
+        <lastSystemChange value="2017-02-27T15:13:52+01:00" />
+        <source>
+          <reference value="urn:uuid:7c20381b-6acc-401e-914e-0c1a21a58ad7" />
+        </source>
+        <parent>
+          <reference value="urn:uuid:ba1d59b7-c8aa-40a7-bd1f-175cfa5c0f8b" />
+        </parent>
+      </DeviceComponent>
+    </resource>
+    <request>
+      <method value="POST" />
+      <url value="DeviceComponent" />
+    </request>
+  </entry>
+  <entry>
+    <fullUrl value="urn:uuid:fa2993b1-4d08-4445-9c46-b78b575eb684" />
+    <resource>
+      <DeviceMetric xmlns="http://hl7.org/fhir">
+        <type>
+          <coding>
+            <system value="urn:iso:std:iso:11073:10101" />
+            <code value="131328" />
+          </coding>
+          <text value="ECG" />
+        </type>
+        <identifier>
+          <use value="temp" />
+          <system value="urn:ietf:rfc:3986" />
+          <value value="urn:uuid:fa2993b1-4d08-4445-9c46-b78b575eb684" />
+        </identifier>
+        <source>
+          <reference value="urn:uuid:7c20381b-6acc-401e-914e-0c1a21a58ad7" />
+        </source>
+        <parent>
+          <reference value="urn:uuid:1dda5d5a-f4c8-48e5-85c5-b21970a17bc0" />
+        </parent>
+        <operationalStatus value="off" />
+        <category value="unspecified" />
+      </DeviceMetric>
+    </resource>
+    <request>
+      <method value="POST" />
+      <url value="DeviceMetric" />
+    </request>
+  </entry>
+  <entry>
+    <fullUrl value="urn:uuid:be763827-935d-4bf0-ba77-3bdb389cef0d" />
+    <resource>
+      <DeviceComponent xmlns="http://hl7.org/fhir">
+        <type>
+          <coding>
+            <system value="urn:iso:std:iso:11073:10101" />
+            <code value="70739" />
+            <display value="MDC_DEV_CARD_RATE_CHAN" />
+          </coding>
+          <text value="HR" />
+        </type>
+        <identifier>
+          <use value="temp" />
+          <system value="urn:ietf:rfc:3986" />
+          <value value="urn:uuid:be763827-935d-4bf0-ba77-3bdb389cef0d" />
+        </identifier>
+        <lastSystemChange value="2017-02-27T15:13:52+01:00" />
+        <source>
+          <reference value="urn:uuid:7c20381b-6acc-401e-914e-0c1a21a58ad7" />
+        </source>
+        <parent>
+          <reference value="urn:uuid:ba1d59b7-c8aa-40a7-bd1f-175cfa5c0f8b" />
+        </parent>
+      </DeviceComponent>
+    </resource>
+    <request>
+      <method value="POST" />
+      <url value="DeviceComponent" />
+    </request>
+  </entry>
+  <entry>
+    <fullUrl value="urn:uuid:a4ab2699-d62f-4910-88aa-8c791820163e" />
+    <resource>
+      <DeviceMetric xmlns="http://hl7.org/fhir">
+        <type>
+          <coding>
+            <system value="urn:iso:std:iso:11073:10101" />
+            <code value="147842" />
+            <display value="MDC_ECG_CARD_BEAT_RATE" />
+          </coding>
+          <text value="HR" />
+        </type>
+        <identifier>
+          <use value="temp" />
+          <system value="urn:ietf:rfc:3986" />
+          <value value="urn:uuid:a4ab2699-d62f-4910-88aa-8c791820163e" />
+        </identifier>
+        <source>
+          <reference value="urn:uuid:7c20381b-6acc-401e-914e-0c1a21a58ad7" />
+        </source>
+        <parent>
+          <reference value="urn:uuid:be763827-935d-4bf0-ba77-3bdb389cef0d" />
+        </parent>
+        <operationalStatus value="on" />
+        <category value="measurement" />
+      </DeviceMetric>
+    </resource>
+    <request>
+      <method value="POST" />
+      <url value="DeviceMetric" />
+    </request>
+  </entry>
+  <entry>
+    <fullUrl value="urn:uuid:0dd34980-2da9-4b59-81fa-1be7d5662ad9" />
+    <resource>
+      <Observation xmlns="http://hl7.org/fhir">
+        <status value="final" />
+        <code>
+          <coding>
+            <system value="urn:iso:std:iso:11073:10101" />
+            <code value="147842" />
+            <display value="MDC_ECG_CARD_BEAT_RATE" />
+          </coding>
+          <text value="HR" />
+        </code>
+        <subject>
+          <reference value="urn:uuid:5f9ce49b-d643-4a71-929e-9d9a1b70aa66" />
+        </subject>
+        <valueQuantity>
+          <value value="60" />
+          <unit value="bpm" />
+          <system value="http://unitsofmeasure.org" />
+          <code value="/min" />
+        </valueQuantity>
+        <device>
+          <reference value="urn:uuid:a4ab2699-d62f-4910-88aa-8c791820163e" />
+        </device>
+      </Observation>
+    </resource>
+    <request>
+      <method value="POST" />
+      <url value="Observation" />
+    </request>
+  </entry>
+  <entry>
+    <fullUrl value="urn:uuid:05a9c59d-3bfb-48ec-a1e2-f060e78c8720" />
+    <resource>
+      <DeviceComponent xmlns="http://hl7.org/fhir">
+        <type>
+          <coding>
+            <system value="urn:iso:std:iso:11073:10101" />
+            <code value="70686" />
+            <display value="MDC_DEV_PRESS_BLD_NONINV_VMD" />
+          </coding>
+          <text value="NBP" />
+        </type>
+        <identifier>
+          <use value="temp" />
+          <system value="urn:ietf:rfc:3986" />
+          <value value="urn:uuid:05a9c59d-3bfb-48ec-a1e2-f060e78c8720" />
+        </identifier>
+        <lastSystemChange value="2017-02-27T15:13:52+01:00" />
+        <source>
+          <reference value="urn:uuid:7c20381b-6acc-401e-914e-0c1a21a58ad7" />
+        </source>
+        <parent>
+          <reference value="urn:uuid:23016539-8e68-4f25-8281-a2802ded806c" />
+        </parent>
+      </DeviceComponent>
+    </resource>
+    <request>
+      <method value="POST" />
+      <url value="DeviceComponent" />
+    </request>
+  </entry>
+  <entry>
+    <fullUrl value="urn:uuid:f9f85120-b8e9-4743-8751-eae5d07dca13" />
+    <resource>
+      <DeviceComponent xmlns="http://hl7.org/fhir">
+        <type>
+          <coding>
+            <system value="urn:iso:std:iso:11073:10101" />
+            <code value="69855" />
+            <display value="MDC_DEV_METER_PRESS_BLD_CHAN" />
+          </coding>
+          <text value="Press" />
+        </type>
+        <identifier>
+          <use value="temp" />
+          <system value="urn:ietf:rfc:3986" />
+          <value value="urn:uuid:f9f85120-b8e9-4743-8751-eae5d07dca13" />
+        </identifier>
+        <lastSystemChange value="2017-02-27T15:13:52+01:00" />
+        <source>
+          <reference value="urn:uuid:7c20381b-6acc-401e-914e-0c1a21a58ad7" />
+        </source>
+        <parent>
+          <reference value="urn:uuid:05a9c59d-3bfb-48ec-a1e2-f060e78c8720" />
+        </parent>
+      </DeviceComponent>
+    </resource>
+    <request>
+      <method value="POST" />
+      <url value="DeviceComponent" />
+    </request>
+  </entry>
+  <entry>
+    <fullUrl value="urn:uuid:42c9969c-bb59-4263-bf14-8772d056e3d6" />
+    <resource>
+      <DeviceMetric xmlns="http://hl7.org/fhir">
+        <type>
+          <coding>
+            <system value="urn:iso:std:iso:11073:10101" />
+            <code value="150020" />
+            <display value="MDC_PRESS_BLD_NONINV" />
+          </coding>
+          <text value="NBP" />
+        </type>
+        <identifier>
+          <use value="temp" />
+          <system value="urn:ietf:rfc:3986" />
+          <value value="urn:uuid:42c9969c-bb59-4263-bf14-8772d056e3d6" />
+        </identifier>
+        <source>
+          <reference value="urn:uuid:7c20381b-6acc-401e-914e-0c1a21a58ad7" />
+        </source>
+        <parent>
+          <reference value="urn:uuid:f9f85120-b8e9-4743-8751-eae5d07dca13" />
+        </parent>
+        <operationalStatus value="on" />
+        <category value="measurement" />
+      </DeviceMetric>
+    </resource>
+    <request>
+      <method value="POST" />
+      <url value="DeviceMetric" />
+    </request>
+  </entry>
+  <entry>
+    <fullUrl value="urn:uuid:65482555-bd27-4adc-a789-b78c2c4d4647" />
+    <resource>
+      <Observation xmlns="http://hl7.org/fhir">
+        <status value="final" />
+        <code>
+          <coding>
+            <system value="urn:iso:std:iso:11073:10101" />
+            <code value="150020" />
+            <display value="MDC_PRESS_BLD_NONINV" />
+          </coding>
+          <text value="NBP" />
+        </code>
+        <subject>
+          <reference value="urn:uuid:5f9ce49b-d643-4a71-929e-9d9a1b70aa66" />
+        </subject>
+        <effectiveDateTime value="2017-02-28T14:25:57+01:00" />
+        <device>
+          <reference value="urn:uuid:42c9969c-bb59-4263-bf14-8772d056e3d6" />
+        </device>
+        <component>
+          <code>
+            <coding>
+              <system value="urn:iso:std:iso:11073:10101" />
+              <code value="150021" />
+              <display value="MDC_PRESS_BLD_NONINV_SYS" />
+            </coding>
+            <text value="NBPs" />
+          </code>
+          <valueQuantity>
+            <value value="120" />
+            <unit value="mmHg" />
+            <system value="http://unitsofmeasure.org" />
+            <code value="mm[Hg]" />
+          </valueQuantity>
+        </component>
+        <component>
+          <code>
+            <coding>
+              <system value="urn:iso:std:iso:11073:10101" />
+              <code value="150022" />
+              <display value="MDC_PRESS_BLD_NONINV_DIA" />
+            </coding>
+            <text value="NBPd" />
+          </code>
+          <valueQuantity>
+            <value value="80" />
+            <unit value="mmHg" />
+            <system value="http://unitsofmeasure.org" />
+            <code value="mm[Hg]" />
+          </valueQuantity>
+        </component>
+        <component>
+          <code>
+            <coding>
+              <system value="urn:iso:std:iso:11073:10101" />
+              <code value="150023" />
+              <display value="MDC_PRESS_BLD_NONINV_MEAN" />
+            </coding>
+            <text value="NBPm" />
+          </code>
+          <valueQuantity>
+            <value value="90" />
+            <unit value="mmHg" />
+            <system value="http://unitsofmeasure.org" />
+            <code value="mm[Hg]" />
+          </valueQuantity>
+        </component>
+      </Observation>
+    </resource>
+    <request>
+      <method value="POST" />
+      <url value="Observation" />
+    </request>
+  </entry>
+</Bundle>

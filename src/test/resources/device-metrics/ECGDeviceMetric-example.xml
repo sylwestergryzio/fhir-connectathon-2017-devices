@@ -1,0 +1,25 @@
+<DeviceMetric xmlns="http://hl7.org/fhir">
+  <meta>
+    <profile value="http://example.org/fhir/StructureDefinition/ECGDeviceMetric" />
+  </meta>
+  <type>
+    <coding>
+      <system value="urn:iso:std:iso:11073:10101" />
+      <code value="131328" />
+    </coding>
+    <text value="ECG" />
+  </type>
+  <identifier>
+    <use value="temp" />
+    <system value="urn:ietf:rfc:3986" />
+    <value value="urn:uuid:fa2993b1-4d08-4445-9c46-b78b575eb684" />
+  </identifier>
+  <source>
+    <reference value="urn:uuid:7c20381b-6acc-401e-914e-0c1a21a58ad7" />
+  </source>
+  <parent>
+    <reference value="urn:uuid:1dda5d5a-f4c8-48e5-85c5-b21970a17bc0" />
+  </parent>
+  <operationalStatus value="off" />
+  <category value="unspecified" />
+</DeviceMetric>

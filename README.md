@@ -14,7 +14,7 @@ Resources to validate
     src/test/resources/device-components
     src/test/resources/device-metrics
 
-Profile to validate with
+Profiles to validate with
 
     src/test/resources/profiles
 
